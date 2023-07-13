@@ -1832,6 +1832,7 @@ quit(const Arg *arg)
 	}
 
 	running = 0;
+
 }
 
 Monitor *

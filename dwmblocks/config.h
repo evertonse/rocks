@@ -26,11 +26,17 @@ static const Block blocks[] = {
 	// {"",	"sb-help-icon",	0,	15},
   {" ", "date +\"%T\"", 1 ,0},
 	{" Mem:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	10,		0},
+  {""  , "~/.local/bin/statusbar/timerunning"                , 60 , 0} ,
+  {""  , "~/.local/bin/statusbar/cpu_usage"                  , 5  , 0} ,
+  {""  , "~/.local/bin/statusbar/free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g"      , 30 , 0} ,
+  {""  , "~/.local/bin/statusbar/bandwidth"                  , 5  , 4} ,
+  {""  , "~/.local/bin/statusbar/volume"                     , 5  , 0} ,
+  {":", "~/.local/bin/statusbar/battery | tr \'\n\' \' \' " , 5  , 0},
+  {""  , "~/.local/bin/statusbar/clock"                      , 5  , 0} ,
 };
 
-//Sets delimiter between status commands. NULL character ('\0') means no delimiter.
+//sets delimeter between status commands. NULL character ('\0') means no delimeter.
 static char *delim = "  ";
-
 // Have dwmblocks automatically recompile and run when you edit this file in
 // vim with the following line in your vimrc/init.vim:
 

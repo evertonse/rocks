@@ -32,17 +32,17 @@ static const Block blocks[] = {
  //  {""  , "~/.local/bin/statusbar/volume"                     , 5  , 0} ,
  //  {":", "~/.local/bin/statusbar/battery | tr \'\n\' \' \' " , 5  , 0},
  //  {""  , "~/.local/bin/statusbar/clock"                      , 1  , 0} ,
-  {"",    "sb-nettraf",       1,  7},
-  {"",    "sb-internet",      60, 4},
-  {"",    "sb-cpu",           15, 6},
-  {"",    "sb-backlight",     0,  5},
-  {"",    "sb-volume",        0,  3},
-  {"",    "sb-battery",       60, 2},
-  {"",    "sb-clock",         60, 1},
+   {"",    "sb-nettraf",       1,  7},
+   {"",    "sb-internet",      60, 4},
+  // {"",    "sb-cpu",           15, 6},
+   {"",    "sb-backlight",     0,  5},
+   {"",    "sb-volume",        0,  3},
+   {"",    "sb-battery",       60, 2},
+    {"",    "sb-clock",         1, 0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
-static char *delim = " ";
+static char *delim = "   ";
 // Have dwmblocks automatically recompile and run when you edit this file in
 // vim with the following line in your vimrc/init.vim:
 

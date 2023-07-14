@@ -24,7 +24,7 @@ static const Block blocks[] = {
 	// {"",	"sb-internet",	5,	4},
 	/* {"",	"sb-iplocate", 0,	27}, */
 	// {"",	"sb-help-icon",	0,	15},
-  //{" ", "date +\"%T\"", 1 ,0},
+  {" ", "date +\"%T\"", 1 ,0},
 	// {" Mem:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	10,		0},
  //  {""  , "~/.local/bin/statusbar/timerunning"                , 60 , 0} ,
  //  {""  , "~/.local/bin/statusbar/cpu_usage"                  , 5  , 0} ,
@@ -32,13 +32,13 @@ static const Block blocks[] = {
  //  {""  , "~/.local/bin/statusbar/volume"                     , 5  , 0} ,
  //  {":", "~/.local/bin/statusbar/battery | tr \'\n\' \' \' " , 5  , 0},
  //  {""  , "~/.local/bin/statusbar/clock"                      , 1  , 0} ,
-   {"",    "sb-nettraf",       1,  7},
-   {"",    "sb-internet",      60, 4},
+   // {"",    "sb-nettraf",       1,  7},
+   // {"",    "sb-internet",      60, 4},
   // {"",    "sb-cpu",           15, 6},
    {"",    "sb-backlight",     0,  5},
-   {"",    "sb-volume",        0,  3},
-   {"",    "sb-battery",       60, 2},
-    {"",    "sb-clock",         1, 0},
+  //  {"",    "sb-volume",        0,  3},
+  //  {"",    "sb-battery",       60, 2},
+  //   {"",    "sb-clock",         1, 0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.

@@ -2033,6 +2033,7 @@ runautostart(void)
 {
 	char *pathpfx;
 	char *path;
+
 	char *xdgdatahome;
 	char *home;
 	struct stat sb;

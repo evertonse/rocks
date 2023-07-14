@@ -70,6 +70,7 @@ static const struct arg args[] = {
 	{ battery_perc, " [🔋: %s%%] ",   "BAT1"   },
 	{ cpu_perc, "[CPU: %s%%]",     NULL    },
 	{ wifi_perc, "[wifi: %s%%]",     "wlan0"},
+	{ vol_perc, "[vol : %s%%]",     "/bin/amixer"},
 	// { run_command, " %s ",        "sb-nettraf"},
 	// { run_command, " %s ",        "sb-battery"},
   

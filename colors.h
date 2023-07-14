@@ -43,6 +43,7 @@
 #define vscGitSubmodule  "#8db9e2",
 #define vscContext  "#404040",
 #define vscContextCurrent  "#707070",
+#define 
 #define vscFoldBackground  "#202d39",
 
 #define vscGray  "#808080",

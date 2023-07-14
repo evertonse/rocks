@@ -17,13 +17,24 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 //static const char *fonts[]          = { "monospace:size=10" };
 static const char *fonts[] = { "JetBrainsMonoNF:pixelsize=12:antialias=true:autohint=true" };
 static const char dmenufont[]       = "monospace:size=11";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
+
+// static const char col_gray1[]      = "#222222";
+// static const char col_gray2[]      = "#444444";
+// static const char col_gray3[]      = "#bbbbbb";
 //static const char col_gray4[]       = "#eeeeee";
-static const char col_gray4[]       = "#1b0b02";
 //static const char col_cyan[]        = "#005577";
-static const char col_cyan[]        = "#ebdbb2";
+
+// static const char col_gray1[]       = "#222222";
+// static const char col_gray2[]       = "#444444";
+// static const char col_gray3[]       = "#bbbbbb";
+// static const char col_gray4[]       = "#1b0b02";
+// static const char col_cyan[]        = "#ebdbb2";
+
+static const char col_gray1[]       = "#2D2D2D";
+static const char col_gray2[]       = "#373737";
+static const char col_gray3[]       = "#BBBBBB";
+static const char col_gray4[]       = "#1E1E1E";
+static const char col_cyan[]        = "#D4D4D4";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -63,7 +74,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -106,6 +117,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
+	{ MODKEY|ShiftMask,             XK_x,      togglesticky,   {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },

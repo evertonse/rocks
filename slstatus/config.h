@@ -66,11 +66,20 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
   //{ datetime, "%s",  "%a %d %b %Y, %r"},
-	{ datetime,  " %s ",           "%a %b %d-%m-%Y %r" },
-	{ battery_perc, " [🔋: %s%%] ",   "BAT1"   },
-	{ cpu_perc, "[CPU: %s%%]",     NULL    },
-	{ wifi_perc, "[wifi: %s%%]",     "wlan0"},
-	{ vol_perc, "[vol : %s%%]",     "/bin/amixer"},
+	// { datetime,  " %s ",           "%a %b %d-%m-%Y %r" },
+	// { battery_perc, " [🔋: %s%%] ",   "BAT1"   },
+	// { cpu_perc, "[CPU: %s%%]",     NULL    },
+	// { wifi_perc, "[wifi: %s%%]",     "wlan0"},
+	// { vol_perc, "[vol : %s%%]",     "/bin/amixer"},
+
+   {run_command, " %s ",    "/home/excyber/.local/bin/statusbar/sb-clock"} ,
+   {run_command, " %s ",    "/home/excyber/.local/bin/statusbar/sb-nettraf"},
+   {run_command, " %s ",    "/home/excyber/.local/bin/statusbar/sb-internet"},
+   {run_command, " %s ",    "/home/excyber/.local/bin/statusbar/sb-cpu"},
+   {run_command, " %s ",    "/home/excyber/.local/bin/statusbar/sb-backlight"},
+   {run_command, " %s ",    "/home/excyber/.local/bin/statusbar/sb-volume"},
+   {run_command, " %s ",    "/home/excyber/.local/bin/statusbar/sb-battery"},
+  //   {"run_command",    "/home/excyber/.local/bin/statusbar/sb-clock",         1},
 	// { run_command, " %s ",        "sb-nettraf"},
 	// { run_command, " %s ",        "sb-battery"},
   

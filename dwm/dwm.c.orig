@@ -1128,9 +1128,7 @@ drawbar(Monitor *m)
 					remainder--;
 				}
         if (c->issticky) {
-          // possibly can cahnge the name of a sticky client display
-          drw_text(drw, x, 0, tabw, bh, lrpad / 2, c->name, 0);
-          drw_polygon(drw, x + boxs, m->sel->isfloating ? boxs * 2 + boxw : boxs, stickyiconbb.x, stickyiconbb.y, boxw, boxw * stickyiconbb.y / stickyiconbb.x, stickyicon, LENGTH(stickyicon), Nonconvex, m->sel->tags & m->tagset[m->seltags]);
+				  drw_text(drw, x, 0, tabw, bh, lrpad / 2, "", 0);
         }
         else {
           drw_text(drw, x, 0, tabw, bh, lrpad / 2, c->name, 0);

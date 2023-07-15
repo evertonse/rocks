@@ -1676,7 +1676,7 @@ motionnotify(XEvent *e)
 	c = m->clients;
 
 	x = 0, i = 0;
-  int length_of_tags = 1;
+  int length_of_tags = 0;
 	// do
 	// 	x += TEXTW(tags[i]);
 	// while (ev->x >= x && ++i < length_of_tags );

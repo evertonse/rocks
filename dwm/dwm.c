@@ -597,6 +597,7 @@ buttonpress(XEvent *e)
 				continue;
 			x += TEXTW(tags[i]);
 		} while (ev->x >= x && ++i < LENGTH(tags));
+
 		if (i < LENGTH(tags)) {
 			click = ClkTagBar;
 			arg.ui = 1 << i;
@@ -1098,6 +1099,10 @@ drawbar(Monitor *m)
 		w = TEXTW(tags[i]);
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
+		if (occ & 1 << i)
+			drw_rect(drw, x + boxs, boxs, boxw, boxw,
+				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
+				urg & 1 << i);
 		x += w;
 	}
 	w = TEXTW(m->ltsymbol);
@@ -1671,10 +1676,24 @@ motionnotify(XEvent *e)
 	c = m->clients;
 
 	x = 0, i = 0;
-	do
-		x += TEXTW(tags[i]);
-	while (ev->x >= x && ++i < LENGTH(tags));
-	if (i < LENGTH(tags) || ev->x < x + TEXTW(selmon->ltsymbol) || ev->x > selmon->ww - TEXTW(stext) + lrpad - 2) {
+  int length_of_tags = 1;
+	// do
+	// 	x += TEXTW(tags[i]);
+	// while (ev->x >= x && ++i < length_of_tags );
+  unsigned int occ = 0;
+  for(Client* c2 = m->clients; c2; c2=c2->next)
+    occ |= c2->tags;
+  do {
+    /* Do not reserve space for vacant tags */
+    length_of_tags += 1;
+    if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
+      continue;
+    x += TEXTW(tags[i]);
+  } while (ev->x >= x && ++i < LENGTH(tags));
+  //assert(length_of_tags <= LENGTH(tags));
+
+
+	if (i < length_of_tags  || ev->x < x + TEXTW(selmon->ltsymbol) || ev->x > selmon->ww - TEXTW(stext) + lrpad - 2) {
 		if (selmon->hov) {
 			if (selmon->hov != selmon->sel)
 				XSetWindowBorder(dpy, selmon->hov->win, scheme[SchemeNorm][ColBorder].pixel);

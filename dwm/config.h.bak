@@ -43,7 +43,6 @@ static const char *colors[][3]      = {
 	[SchemeHov]  = { col_gray4, col_cyan,  col_cyan  },
 	[SchemeHid]  = { col_cyan,  col_gray1, col_cyan  },
 };
-
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const char *tags[] = { "","1", "2", "3", "4", "5", "6", "7", "8"};
@@ -59,9 +58,11 @@ static const Rule rules[] = {
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
+static const XPoint stickyicon[]    = { {0,0}, {4,0}, {4,8}, {2,6}, {0,8}, {0,0} }; /* represents the icon as an array of vertices */
+static const XPoint stickyiconbb    = {4,8};	/* defines the bottom right corner of the polygon's bounding box (speeds up scaling) */
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.58; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int attachbelow = 1;    /* 1 means attach after the currently active window */
@@ -77,7 +78,6 @@ static const Layout layouts[] = {
 /* key definitions */
 #define SUPERKEY Mod4Mask
 #define ALTKEY Mod1Mask
-
 #define MODKEY ALTKEY
 
 #define TAGKEYS(KEY,TAG) \
@@ -150,8 +150,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_5,                      5)
 	TAGKEYS(                        XK_6,                      6)
 	TAGKEYS(                        XK_7,                      7)
-	TAGKEYS(                        XK_9,                      9)
 	TAGKEYS(                        XK_8,                      8)
+	TAGKEYS(                        XK_9,                      9)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 

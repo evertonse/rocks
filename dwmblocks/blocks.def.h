@@ -59,7 +59,7 @@ static const Block blocks[] = {
     {" ", "/home/excyber/.local/bin/statusbar/sb-nettraf", 1, 7},
     {"", "/home/excyber/.local/bin/statusbar/sb-internet", 30, 4},
     {"", "/home/excyber/.local/bin/statusbar/sb-cpu", 15, 6},
-    {" ", "/home/excyber/.local/bin/statusbar/sb-backlight", 15, 5},
+    {" ", "/home/excyber/.local/bin/statusbar/sb-backlight", 2, 5},
     {"", "/home/excyber/.local/bin/statusbar/sb-volume", 10, 3},
     {" ", "/home/excyber/.local/bin/statusbar/sb-battery", 60, 2},
 };

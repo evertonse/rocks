@@ -31,17 +31,22 @@ static const char dmenufont[]       = "monospace:size=11";
 // static const char col_cyan[]        = "#ebdbb2";
 
 static const char col_gray1[]       = "#2D2D2D";
+static const char col_tab_bg[]      = "#4E4E4E";
+static const char col_tab_fg[]      = "#BBBBBB";
 static const char col_gray2[]       = "#373737";
 static const char col_gray3[]       = "#BBBBBB";
 static const char col_gray4[]       = "#1E1E1E";
 static const char col_cyan[]        = "#8db9e2";
+static const char col_hov_bg[]      = "#2D2D2D";
+static const char col_hov_fg[]      = "#9eCaF3";
+static const char hid[]             = "#8db9e2";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-	[SchemeHov]  = { col_gray4, col_cyan,  col_cyan  },
-	[SchemeHid]  = { col_cyan,  col_gray1, col_cyan  },
+	[SchemeHov]  = { col_hov_fg, col_hov_bg,  col_cyan  },
+	[SchemeHid]  = { col_cyan,  col_tab_bg, col_cyan  },
 };
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -78,7 +83,7 @@ static const Layout layouts[] = {
 /* key definitions */
 #define SUPERKEY Mod4Mask
 #define ALTKEY Mod1Mask
-#define MODKEY ALTKEY
+#define MODKEY SUPERKEY
 
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \

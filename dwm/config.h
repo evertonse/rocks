@@ -83,8 +83,8 @@ static const Layout layouts[] = {
 /* key definitions */
 #define SUPERKEY Mod4Mask
 #define ALTKEY Mod1Mask
-//#define MODKEY SUPERKEY
-#define MODKEY ALTKEY 
+#define MODKEY SUPERKEY
+//#define MODKEY ALTKEY 
 
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \

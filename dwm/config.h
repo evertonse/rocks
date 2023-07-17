@@ -106,8 +106,8 @@ static const char *termcmd[]      = { "st", NULL };
 static const char *wificmd[]      = { "st","nmtui", NULL };
 static const char *explorercmd[]  = { "st","lf", NULL };
 static const char *printcmd[]     = { "flameshot", "gui", NULL };
-static const char *volumecmd[]    = { "pavucontrol", NULL };
-static const char *bluetoothcmd[] = { "blueman-manager", NULL };
+static const char *volumecmd[]    = { "st -e pavucontrol", NULL };
+static const char *bluetoothcmd[] = { "st -e blueman-manager", NULL };
 
 
 #include "movestack.c"

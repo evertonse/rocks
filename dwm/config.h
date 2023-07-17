@@ -61,6 +61,7 @@ static const Rule rules[] = {
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "Blueman", NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 static const XPoint stickyicon[]    = { {0,0}, {4,0}, {4,8}, {2,6}, {0,8}, {0,0} }; /* represents the icon as an array of vertices */
@@ -107,8 +108,9 @@ static const char *wificmd[]      = { "st","nmtui", NULL };
 static const char *explorercmd[]  = { "st","lf", NULL };
 static const char *printcmd[]     = { "flameshot", "gui", NULL };
 static const char *volumecmd[]    = { "st", "-e", "pulsemixer", NULL };
-//static const char *volumecmd[]    = { "st", "-e", "pavucontrol", NULL };
-static const char *bluetoothcmd[] = { "st", "-e", "blueman-manager", NULL };
+static const char *bluetoothcmd[]    = { "st", "-e", "bluetuith", NULL };
+// static const char *volumecmd[]    = { "st", "-e", "pavucontrol", NULL };
+// static const char *bluetoothcmd[] = { "source", "~/.config/sh/var.sh && blueman-manager", NULL };
 
 
 #include "movestack.c"

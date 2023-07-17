@@ -115,9 +115,8 @@ static const char *bluetoothcmd[] = { "blueman-manager", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
   { MODKEY|ShiftMask,             XK_F1,      tagall,        {.v = "F1"} },
-  { MODKEY|ShiftMask,             XK_F9,      tagall,        {.v = "F9"} },
   { MODKEY,                       XK_F1,      tagall,        {.v = "1"} }, 
-  { MODKEY,                       XK_F9,      tagall,        {.v = "9"} }, 
+  { MODKEY,                       XK_F8,      tagall,        {.v = "9"} }, 
 	{ 0,                            XK_Print,  spawn,          {.v = printcmd} },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ ALTKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },

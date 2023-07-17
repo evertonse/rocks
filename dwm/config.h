@@ -83,8 +83,12 @@ static const Layout layouts[] = {
 /* key definitions */
 #define SUPERKEY Mod4Mask
 #define ALTKEY Mod1Mask
-#define MODKEY SUPERKEY
-//#define MODKEY ALTKEY 
+
+#if defined(WSL)
+  #define MODKEY ALTKEY 
+#else
+  #define MODKEY SUPERKEY
+#endif
 
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
@@ -107,8 +111,13 @@ static const char *bluetoothcmd[]  = { "blueman-manager", NULL };
 
 
 #include "movestack.c"
+#include "tagall.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+  { MODKEY|ShiftMask,             XK_F1,      tagall,        {.v = "F1"} },
+  { MODKEY|ShiftMask,             XK_F9,      tagall,        {.v = "F9"} },
+  { MODKEY,                       XK_F1,      tagall,        {.v = "1"} }, 
+  { MODKEY,                       XK_F9,      tagall,        {.v = "9"} }, 
 	{ 0,                            XK_Print,  spawn,          {.v = printcmd} },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ ALTKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },

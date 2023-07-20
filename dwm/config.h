@@ -85,6 +85,10 @@ static const Layout layouts[] = {
 #define SUPERKEY Mod4Mask
 #define ALTKEY Mod1Mask
 
+
+#define ICONSIZE 16   /* icon size */
+#define ICONSPACING 5 /* space between icon and title */
+
 #if defined(WSL)
   #define MODKEY ALTKEY 
 #else

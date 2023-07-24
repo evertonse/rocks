@@ -44,7 +44,7 @@ static const char hid[]             = "#8db9e2";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { "#BBBBBB", col_gray4,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 	[SchemeHov]  = { col_hov_fg, col_hov_bg,  col_cyan  },
 	[SchemeHid]  = { col_cyan,  col_gray4, col_cyan  },
 };
@@ -62,7 +62,6 @@ static const Rule rules[] = {
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "Blueman", NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ "Google Chrome", NULL,     NULL,     2,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 static const XPoint stickyicon[]    = { {0,0}, {4,0}, {4,8}, {2,6}, {0,8}, {0,0} }; /* represents the icon as an array of vertices */
@@ -81,6 +80,10 @@ static const Layout layouts[] = {
 	{ "[F]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
+
+
+#define ICONSIZE 16   /* icon size */
+#define ICONSPACING 5 /* space between icon and title */
 
 /* key definitions */
 #define SUPERKEY Mod4Mask

@@ -55,13 +55,13 @@ static const Block blocks[] = {
     //  {""  , "~/.local/bin/statusbar/bandwidth"                  , 5  , 4} ,
     //{" "  , "~/.local/bin/statusbar/volume"                     , 5  , 0} ,
     //{":", "~/.local/bin/statusbar/battery | tr \'\n\' \' \' " , 5  , 0},
-    {" ", "/home/excyber/.local/bin/statusbar/sb-clock", 1, 0},
-    {" ", "/home/excyber/.local/bin/statusbar/sb-nettraf", 1, 7},
+    {"   ", "/home/excyber/.local/bin/statusbar/sb-nettraf", 1, 7},
     {"", "/home/excyber/.local/bin/statusbar/sb-internet", 30, 4},
     {"", "/home/excyber/.local/bin/statusbar/sb-cpu", 15, 6},
     {" ", "/home/excyber/.local/bin/statusbar/sb-backlight", 2, 5},
     {"", "/home/excyber/.local/bin/statusbar/sb-volume", 10, 3},
     {" ", "/home/excyber/.local/bin/statusbar/sb-battery", 60, 2},
+    {"", "/home/excyber/.local/bin/statusbar/sb-clock", 1, 0},
 };
 
 // sets delimeter between status commands. NULL character ('\0') means no
